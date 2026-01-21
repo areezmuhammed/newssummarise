@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UK Political News Dashboard
 
-## Getting Started
+A professional, real-time dashboard that aggregates, summarizes, and categorizes the latest UK political news using AI.
 
-First, run the development server:
+![UK Politics Daily](public/window.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Overview
+
+This project is a **Next.js** application designed to provide **concise, factual, and neutral** summaries of significant political events in the UK over the last 24 hours. 
+
+It leverages the **Perplexity API (`sonar-pro`)** to function as an objective political analyst, fetching live data from reputable sources (BBC, The Guardian, Sky News) and formatting it into a clean, structured news feed.
+
+## ✨ Features
+
+- **🤖 AI-Powered Summaries**: Uses Large Language Models to distill complex political events into 3-sentence summaries.
+- **⚖️ Sentiment Analysis**: Automatically categorizes stories as *Neutral*, *Controversial*, or *Developing*.
+- **🔍 Source Transparency**: Lists all domains cited by the AI to ensure credibility.
+- **⚡ Real-time Updates**: Fetches the latest news on every refresh (configurable caching).
+- **🎨 Premium UI**: Built with **Tailwind CSS v4**, featuring glassmorphism, smooth gradients, and a responsive grid layout.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **API**: [Perplexity AI](https://docs.perplexity.ai/) (Model: `sonar-pro`)
+- **Language**: TypeScript
+
+## 🚦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- An API Key from [Perplexity.ai](https://www.perplexity.ai/)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/areezmuhammed/newssummarise.git
+   cd newssummarise
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment**
+   Create a `.env.local` file in the root directory and add your API Key:
+   ```env
+   PERPLEXITY_API_KEY=pplx-your-api-key-here
+   ```
+
+4. **Run the Development Server**
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── app/
+│   │   ├── api/news/    # Secure API Route Proxy
+│   │   ├── page.tsx     # Main Dashboard Component
+│   │   └── globals.css  # Tailwind v4 Configuration
+│   ├── components/      # UI Components (Hero, NewsCard, etc.)
+│   └── types/           # TypeScript Interfaces
+├── public/              # Static Assets
+└── tailwind.config.ts   # (Optional if using standalone config)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open-source and available under the [MIT License](LICENSE).
